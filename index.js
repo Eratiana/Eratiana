@@ -39,7 +39,7 @@ const products = [
         id: 1, 
         name: '🎀 Sparkle Stationery & Fun Box', 
         price: 5500.00, 
-        image: '1.jpg',
+        image: '1.JPG',
         description: 'Make gifting extra special with our thoughtfully curated Kids Premium Gift Box for Girls. Packed with colourful stationery, creative activity items, and a playful pop-it crossbody bag, this box is designed to inspire imagination and joyful learning.',
         ageRange: 'no age limit',
         items: [
@@ -61,7 +61,7 @@ const products = [
          id: 2, 
          name: 'Stich happy box ', 
          price: 5650.00, 
-         image: '2.jpg',
+         image: '2.JPG',
          description: 'Bring joy to any Stitch lover with our specially curated Stitch Gift Box. Packed with adorable plushies, fun stationery, and practical accessories, this gift set is perfect for birthdays, surprises, or themed celebrations. Beautifully packaged in a premium gift box, it’s designed to make gifting effortless and memorable.',
          ageRange: 'no age limit', // Optional
          items: [
@@ -79,7 +79,7 @@ const products = [
          id: 3, 
          name: 'Twinkle Pink Box', 
          price: 3300.00, 
-         image: '3.jpg',
+         image: '3.JPG',
          description: 'Twinkle Pink Box - The Perfect Gift for Little Sparkles! Make every moment magical with our Twinkle Pink Box, thoughtfully packed with adorable and practical essentials. This charming set includes a pink-themed tiffin box, breakfast box, straw cup, unicorn oil pastel pack, and a fun fish-shaped notebook — all beautifully arranged in a premium gift box.',
          ageRange: 'Perfect for ages 3-8', // Optional
          items: [
@@ -98,7 +98,7 @@ const products = [
          id: 4, 
          name: 'Adventure fun box', 
          price: 6750.00, 
-         image: '4.jpg',
+         image: '4.JPG',
          description: 'Surprise your little one with the Adventure Fun Box, a delightful gift set designed to spark imagination, creativity, and endless play. Thoughtfully curated with colorful, exciting, and kid-friendly essentials, this box brings joy from the moment it’s opened. Perfect for birthdays, celebrations, or simply making a child day extra special, it’s a gift that blends learning with fun in the sweetest way.',
          ageRange: 'Perfect for ages 3-8', // Optional
          items: [
@@ -121,7 +121,7 @@ const products = [
          id: 5, 
          name: 'Blue bliss box', 
          price: 4800.00, 
-         image: '5.jpg',
+         image: '5.JPG',
          description: 'A pastel-blue delight filled with adorable, useful, and girly must-haves—perfect for gifting on any special occasion.',
          ageRange: 'Perfect for ages 3-8', // Optional
          items: [
