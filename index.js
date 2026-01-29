@@ -3,7 +3,7 @@ const firebaseConfig = {
     apiKey: "AIzaSyBPs-cn62v2r0qoG_uqfE8QGcuOJNJEIYY",
     authDomain: "erantiana.firebaseapp.com",
     projectId: "erantiana",
-    storageBucket: "erantiana.firebasestorage.app",
+    storageBucket: "erantiana.appspot.com",
     messagingSenderId: "35925770958",
     appId: "1:35925770958:web:9afdb65e2bf292f801469f",
     measurementId: "G-HYR8F6RFS9"
