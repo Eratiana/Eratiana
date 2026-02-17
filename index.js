@@ -326,8 +326,12 @@ Please confirm my order and payment details.`;
         try {
             if (db) await db.collection('orders').add(orderData);
 
+            if (db) await db.collection('orders').add(orderData);
+
             const whatsappUrl = `https://wa.me/${CONFIG.WHATSAPP_NUMBER}?text=${encodeURIComponent(whatsappMessage)}`;
-            window.open(whatsappUrl, '_blank');
+
+            // Use location.href instead of window.open to prevent popup blockers on mobile
+            window.location.href = whatsappUrl;
 
             app.clearCart();
             app.navigate('store');
@@ -513,7 +517,7 @@ Please confirm my order and payment details.`;
             return `
                 <section class="relative h-96 flex items-center justify-center text-white overflow-hidden" style="background-color: #5a3d4d;">
                     <div class="absolute inset-0 w-full h-full flex items-center justify-center opacity-15">
-                        <h1 class="text-[8rem] md:text-[20rem] font-bold text-gray-400 animate-pulse" style="letter-spacing: -0.05em;">Eratiana</h1>
+                        <h1 class="text-[13vw] md:text-[20rem] font-bold text-gray-400 animate-pulse" style="letter-spacing: -0.05em;">Eratiana</h1>
                     </div>
                     <div class="absolute inset-0">
                         <div class="absolute top-10 left-10 w-32 h-32 bg-pink-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
