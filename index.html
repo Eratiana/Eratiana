@@ -67,10 +67,13 @@
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-pink-50 border-t border-gray-100">
             <div class="px-4 pt-2 pb-4 space-y-1">
-                <a href="#" onclick="app.navigate('store')" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-pink-500 hover:bg-pink-100 transition">Store</a>
-                <a href="#" onclick="app.navigate('checkout')" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-pink-500 hover:bg-pink-100 transition">Checkout</a>
-                <a href="https://www.instagram.com/eratiana__lk" target="_blank" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-pink-500 hover:bg-pink-100 transition flex items-center">
-                   <i data-lucide="instagram" class="w-4 h-4 mr-2"></i> Instagram
+                <a href="#" onclick="app.navigate('store')"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-pink-500 hover:bg-pink-100 transition">Store</a>
+                <a href="#" onclick="app.navigate('checkout')"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-pink-500 hover:bg-pink-100 transition">Checkout</a>
+                <a href="https://www.instagram.com/eratiana__lk" target="_blank"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-pink-500 hover:bg-pink-100 transition flex items-center">
+                    <i data-lucide="instagram" class="w-4 h-4 mr-2"></i> Instagram
                 </a>
             </div>
         </div>
@@ -81,11 +84,11 @@
 
     <div id="quick-view-modal"
         class="fixed inset-0 z-50 flex items-center justify-center bg-gray-900 bg-opacity-70 p-4 hidden transition-opacity duration-300">
-        <div class="bg-pink-50 rounded-xl shadow-2xl max-w-lg w-full overflow-hidden relative">
+        <div class="bg-pink-50 rounded-xl shadow-2xl max-w-4xl w-full max-h-[90vh] flex flex-col relative">
             <button onclick="app.closeModal()" class="absolute top-4 right-4 p-2 text-gray-700 hover:text-gray-900">
                 <i data-lucide="x"></i>
             </button>
-            <div id="modal-content" class="p-6 md:p-8">
+            <div id="modal-content" class="p-6 md:p-8 overflow-y-auto">
             </div>
         </div>
     </div>
