@@ -288,6 +288,8 @@ const app = {
 
     placeOrder: async (formElement) => {
         const btn = document.getElementById('pay-btn');
+        const formContainer = formElement.parentElement;
+
         btn.textContent = 'Processing...';
         btn.disabled = true;
 
@@ -326,20 +328,41 @@ Please confirm my order and payment details.`;
         try {
             if (db) await db.collection('orders').add(orderData);
 
-            if (db) await db.collection('orders').add(orderData);
-
             const whatsappUrl = `https://wa.me/${CONFIG.WHATSAPP_NUMBER}?text=${encodeURIComponent(whatsappMessage)}`;
 
-            // Use location.href instead of window.open to prevent popup blockers on mobile
-            window.location.href = whatsappUrl;
+            // Replaced auto-redirect with manual button for mobile reliability
+            formContainer.innerHTML = `
+                <div class="text-center py-8">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="check" class="w-8 h-8 text-green-600"></i>
+                    </div>
+                    <h3 class="text-2xl font-serif text-gray-800 mb-2">Order Saved!</h3>
+                    <p class="text-gray-600 mb-6">Click below to send your order details via WhatsApp to complete the purchase.</p>
+                    
+                    <a href="${whatsappUrl}" target="_blank" 
+                       onclick="app.finishOrder()"
+                       class="inline-flex items-center justify-center w-full py-4 bg-[#25D366] text-white font-bold rounded-lg hover:bg-[#128C7E] transition shadow-lg text-lg">
+                        <i data-lucide="message-circle" class="mr-2"></i>
+                        Open WhatsApp
+                    </a>
+                </div>
+            `;
+            if (typeof lucide !== 'undefined') lucide.createIcons();
 
-            app.clearCart();
-            app.navigate('store');
         } catch (error) {
             console.error("Error:", error);
             alert('Error processing order. Please try again.');
             btn.disabled = false;
+            btn.textContent = 'Place Order via WhatsApp 💬';
         }
+    },
+
+    finishOrder: () => {
+        // Delay clearing cart slightly so they don't see it empty if they come back immediately
+        setTimeout(() => {
+            app.clearCart();
+            app.navigate('store');
+        }, 1000);
     },
 
     byob: {
@@ -415,7 +438,7 @@ Please confirm my order and payment details.`;
                     <img src="${product.image}" class="w-full h-auto object-cover rounded-lg shadow-lg" 
                          onerror="this.src='https://placehold.co/400x400/f3a8b4/333333?text=${encodeURIComponent(product.name)}'">
                 </div>
-                <div class="overflow-y-auto max-h-[70vh]">
+                <div>
                     <h2 class="text-3xl font-serif mb-3 text-gray-800">${product.name}</h2>
                     <p class="text-3xl font-bold text-pink-600 mb-4">${CONFIG.CURRENCY} ${product.price.toLocaleString()}</p>
                     
